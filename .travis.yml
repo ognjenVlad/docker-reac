@@ -6,3 +6,15 @@ before-insall:
   - docker build -t ognjenvladisavljevic/docker-reac -f Dockerfile.dev .
 script:
   - docker run -e CI=true ognjenvladisavljevic/docker-reac npm run test
+
+deploy:
+  provider: elasticbeanstalk
+  region: "eu-central-1"
+  app: "docker"
+  env: "Docker-env"
+  bucket_name: "elasticbeanstalk-eu-central-1-424693556653"
+  bucket_path: "docker"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
