@@ -7,7 +7,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Poz 12
+          Pozzic 12
         </p>
         <a
           className="App-link"
